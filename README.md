@@ -109,6 +109,119 @@ NEXT_PUBLIC_DRIZZLE_DB_URL=
 NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT=
 ```
 ---
+# 📊 Application Workflow
+
+```text
+                               START
+                                 │
+                                 ▼
+                      User Opens Application
+                                 │
+                                 ▼
+                         Landing Page
+                                 │
+                                 ▼
+                      Click "Get Started"
+                                 │
+                                 ▼
+                     Clerk Authentication
+                                 │
+                ┌────────────────┴────────────────┐
+                │                                 │
+                ▼                                 ▼
+        Authentication Failed          Authentication Success
+                │                                 │
+                ▼                                 ▼
+       Display Login Error                Dashboard
+                │                                 │
+                └──────────────┐                  │
+                               │                  ▼
+                               │         Create Interview
+                               │                  │
+                               │                  ▼
+                               │      Enter Job Role
+                               │                  │
+                               │                  ▼
+                               │      Enter Tech Stack
+                               │                  │
+                               │                  ▼
+                               │   Enter Years of Experience
+                               │                  │
+                               │                  ▼
+                               │  Select Number of Questions
+                               │                  │
+                               │                  ▼
+                               │     Generate Prompt
+                               │                  │
+                               │                  ▼
+                               │   Send Prompt to Gemini AI
+                               │                  │
+                               │                  ▼
+                               │ Generate Personalized Questions
+                               │                  │
+                               │                  ▼
+                               │ Save Questions to PostgreSQL
+                               │                  │
+                               │                  ▼
+                               │     Start Interview
+                               │                  │
+                               │                  ▼
+                               │  Display Question One-by-One
+                               │                  │
+                               │                  ▼
+                               │ Enable Webcam & Microphone
+                               │                  │
+                               │                  ▼
+                               │   User Speaks Answer
+                               │                  │
+                               │                  ▼
+                               │  Speech-to-Text Conversion
+                               │                  │
+                               │                  ▼
+                               │ Save Answer in Database
+                               │                  │
+                               │                  ▼
+                               │   More Questions?
+                               │         │
+                     ┌──────────┴──────────┐
+                     │                     │
+                     ▼                     ▼
+                  YES                   NO
+                     │                     │
+                     │                     ▼
+                     │         Interview Completed
+                     │                     │
+                     └────────────┐        ▼
+                                  │ Send Answers to Gemini AI
+                                  │        │
+                                  │        ▼
+                                  │ Generate AI Feedback
+                                  │        │
+                                  │        ▼
+                                  │ Generate Ratings
+                                  │        │
+                                  │        ▼
+                                  │ Generate Ideal Answers
+                                  │        │
+                                  │        ▼
+                                  │ Generate Strengths
+                                  │        │
+                                  │        ▼
+                                  │ Generate Weaknesses
+                                  │        │
+                                  │        ▼
+                                  │ Generate Suggestions
+                                  │        │
+                                  │        ▼
+                                  │ Save Feedback to PostgreSQL
+                                  │        │
+                                  │        ▼
+                                  │ Display Feedback Dashboard
+                                  │        │
+                                  ▼        ▼
+                                END
+```
+---
 
 # 💻 Installation
 Clone the repository
@@ -148,14 +261,7 @@ npm run build
 - Dark Mode
 - Leaderboard
 - Multi-language Support
----
 
-# 👨‍💻 Author
-**Pathivada Sathwik**
-GitHub:
-https://github.com/sathwik123677
-LinkedIn:
-https://www.linkedin.com/in/pathivada-sathwik/
 ---
 
 # ⭐ Show Your Support
